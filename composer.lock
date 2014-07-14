@@ -1,0 +1,1043 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "2b869c8007ac5d74b90fe351ea00a6f8",
+    "packages": [
+        {
+            "name": "danack/artaxservicebuilder",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/documents/projects/github/ArtaxServiceBuilder",
+                "reference": "47656bdf17bd14e03deb24012c8a0543d237b6dc"
+            },
+            "require": {
+                "danack/danack-code": ">=2.4.1",
+                "danack/danackhttp2": ">=1.2.0"
+            },
+            "require-dev": {
+                "danack/auryn": "~0.9.5",
+                "fzaninotto/faker": "*",
+                "mockery/mockery": "0.9.1",
+                "phpunit/phpunit": "4.1.3",
+                "rdlowrey/artax": "dev-master as 0.7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ArtaxServiceBuilder": "src/"
+                }
+            },
+            "time": "2014-07-14 15:05:51"
+        },
+        {
+            "name": "danack/danack-code",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/documents/projects/github/DanackCode",
+                "reference": "86b1734403f237a919fac59e69cbf3d9916e7701"
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-eventmanager": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Danack\\Code\\": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides facilities to generate arbitrary code using an object oriented interface",
+            "keywords": [
+                "code",
+                "zf2"
+            ],
+            "time": "2014-07-14 15:22:28"
+        },
+        {
+            "name": "danack/danackhttp2",
+            "version": "1.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/Danack/HTTP2/Danack_HTTP2_1.2.0.zip",
+                "reference": "Danack_HTTP2_1.2.0.zip",
+                "shasum": "efb052daa2edcc63b6539b0716362ead66d47918"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTTP2": "src/"
+                }
+            },
+            "include-path": [
+                "./"
+            ],
+            "license": [
+                "New BSD License"
+            ],
+            "authors": [
+                {
+                    "email": "Danack@basereality.com",
+                    "name": "Dan Ackroyd",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A fork of HTTP for PHP5 and autoloading",
+            "support": {
+                "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=HTTP2",
+                "source": "https://github.com/Danack/HTTP2"
+            }
+        },
+        {
+            "name": "daverandom/addr",
+            "version": "v0.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/DaveRandom/Addr/DaveRandom_Addr_v0.2.1.zip",
+                "reference": "DaveRandom_Addr_v0.2.1.zip",
+                "shasum": "ccc89a8e1a17b62b5ff2f2d05b4946952089b8b1"
+            },
+            "require": {
+                "daverandom/libdns": "~0.2.1",
+                "php": ">=5.4.0",
+                "rdlowrey/alert": "~0.8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Addr\\": "lib/Addr/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Wright",
+                    "email": "addr@daverandom.com",
+                    "role": "Creator / Lead Developer"
+                }
+            ],
+            "description": "Asynchronous DNS resolver using Alert",
+            "homepage": "https://github.com/DaveRandom/Addr",
+            "keywords": [
+                "async",
+                "client",
+                "dns",
+                "resolve"
+            ]
+        },
+        {
+            "name": "daverandom/libdns",
+            "version": "v0.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/DaveRandom/LibDNS/DaveRandom_LibDNS_v0.2.1.zip",
+                "reference": "DaveRandom_LibDNS_v0.2.1.zip",
+                "shasum": "2f654b7cbc18c4da4c2d95247c50411803d9f42b"
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "LibDNS": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "DNS protocol implementation written in pure PHP",
+            "keywords": [
+                "dns"
+            ],
+            "support": {
+                "issues": "https://github.com/DaveRandom/LibDNS/issues"
+            }
+        },
+        {
+            "name": "rdlowrey/alert",
+            "version": "v0.8.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/rdlowrey/Alert/rdlowrey_Alert_v0.8.1.zip",
+                "reference": "rdlowrey_Alert_v0.8.1.zip",
+                "shasum": "85e4d42a01f678c7fe64430f3ff52af2d7abd124"
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/bootstrap.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Lowrey",
+                    "email": "rdlowrey@php.net",
+                    "role": "Creator / Lead Developer"
+                }
+            ],
+            "description": "Event loops for event-driven/async PHP",
+            "homepage": "https://github.com/rdlowrey/alert",
+            "keywords": [
+                "async",
+                "events",
+                "libevent",
+                "non-blocking"
+            ]
+        },
+        {
+            "name": "rdlowrey/artax",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rdlowrey/Artax.git",
+                "reference": "280ffb5f111dc7223e85dbd5a44db812f9c77842"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rdlowrey/Artax/zipball/280ffb5f111dc7223e85dbd5a44db812f9c77842",
+                "reference": "280ffb5f111dc7223e85dbd5a44db812f9c77842",
+                "shasum": ""
+            },
+            "require": {
+                "daverandom/addr": "~0.2.1",
+                "php": ">=5.4.0",
+                "rdlowrey/alert": "~0.8.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Artax": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Lowrey",
+                    "email": "rdlowrey@gmail.com",
+                    "role": "Creator / Lead Developer"
+                }
+            ],
+            "description": "An object-oriented HTTP/1.1 client with no cURL dependency",
+            "homepage": "https://github.com/rdlowrey/Artax",
+            "keywords": [
+                "async",
+                "client",
+                "http",
+                "parallel",
+                "rest"
+            ],
+            "support": {
+                "source": "https://github.com/rdlowrey/Artax/tree/master",
+                "issues": "https://github.com/rdlowrey/Artax/issues"
+            },
+            "time": "2014-07-07 15:58:55"
+        },
+        {
+            "name": "zendframework/zend-eventmanager",
+            "version": "2.3.0",
+            "target-dir": "Zend/EventManager",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/zendframework/Component_ZendEventManager/zendframework_Component_ZendEventManager_2.3.0.zip",
+                "reference": "zendframework_Component_ZendEventManager_2.3.0.zip",
+                "shasum": "19683eab8f6622d013f7d97ea8e308b97f663847"
+            },
+            "require": {
+                "php": ">=5.3.23",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Zend\\EventManager\\": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": " ",
+            "keywords": [
+                "eventmanager",
+                "zf2"
+            ]
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "2.3.0",
+            "target-dir": "Zend/Stdlib",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/zendframework/Component_ZendStdlib/zendframework_Component_ZendStdlib_2.3.0.zip",
+                "reference": "zendframework_Component_ZendStdlib_2.3.0.zip",
+                "shasum": "c61a659a0fa2afcbf915e1e6ea22017c2ee9b81d"
+            },
+            "require": {
+                "php": ">=5.3.23"
+            },
+            "require-dev": {
+                "zendframework/zend-eventmanager": "self.version",
+                "zendframework/zend-serializer": "self.version",
+                "zendframework/zend-servicemanager": "self.version"
+            },
+            "suggest": {
+                "zendframework/zend-eventmanager": "To support aggregate hydrator usage",
+                "zendframework/zend-serializer": "Zend\\Serializer component",
+                "zendframework/zend-servicemanager": "To support hydrator plugin manager usage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev",
+                    "dev-develop": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Stdlib\\": ""
+                }
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": " ",
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ]
+        }
+    ],
+    "packages-dev": [
+        {
+            "name": "danack/auryn",
+            "version": "0.9.5",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/Danack/Auryn/Danack_Auryn_0.9.5.zip",
+                "reference": "Danack_Auryn_0.9.5.zip",
+                "shasum": "174a54552967ed3bf6c2e27b982ed788bc48f824"
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Auryn\\": "lib/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Lowrey",
+                    "email": "rdlowrey@gmail.com",
+                    "role": "Creator / Main Developer"
+                },
+                {
+                    "name": "Levi Morrison",
+                    "email": "levim@php.net",
+                    "homepage": "http://morrisonlevi.github.com/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Dan Ackroyd",
+                    "email": "Danack@basereality.com",
+                    "homepage": "http://www.basereality.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Auryn is a dependency injector for bootstrapping object-oriented PHP applications.",
+            "homepage": "https://github.com/rdlowrey/Auryn",
+            "keywords": [
+                "dependency injection",
+                "dic",
+                "ioc"
+            ]
+        },
+        {
+            "name": "phpunit/php-code-coverage",
+            "version": "2.0.9",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/php-code-coverage/sebastianbergmann_php-code-coverage_2.0.9.zip",
+                "reference": "sebastianbergmann_php-code-coverage_2.0.9.zip",
+                "shasum": "207ed0efcc3ceeb62bf0e9711e022aa3f65542e8"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-file-iterator": "~1.3.1",
+                "phpunit/php-text-template": "~1.2.0",
+                "phpunit/php-token-stream": "~1.2.2",
+                "sebastian/environment": "~1.0.0",
+                "sebastian/version": "~1.0.3"
+            },
+            "require-dev": {
+                "ext-xdebug": ">=2.1.4",
+                "phpunit/phpunit": "~4.0.14"
+            },
+            "suggest": {
+                "ext-dom": "*",
+                "ext-xdebug": ">=2.2.1",
+                "ext-xmlwriter": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
+            "homepage": "https://github.com/sebastianbergmann/php-code-coverage",
+            "keywords": [
+                "coverage",
+                "testing",
+                "xunit"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "phpunit/php-file-iterator",
+            "version": "1.3.4",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/php-file-iterator/sebastianbergmann_php-file-iterator_1.3.4.zip",
+                "reference": "sebastianbergmann_php-file-iterator_1.3.4.zip",
+                "shasum": "a70cb551610f74adae2411b5a5e924312d9ba93b"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "File/"
+                ]
+            },
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "FilterIterator implementation that filters files based on a list of suffixes.",
+            "homepage": "https://github.com/sebastianbergmann/php-file-iterator/",
+            "keywords": [
+                "filesystem",
+                "iterator"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/php-file-iterator/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "phpunit/php-text-template",
+            "version": "1.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/php-text-template/sebastianbergmann_php-text-template_1.2.0.zip",
+                "reference": "sebastianbergmann_php-text-template_1.2.0.zip",
+                "shasum": "d4ef634706b56020680d52e6f41b4d92912fe064"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "Text/"
+                ]
+            },
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Simple template engine.",
+            "homepage": "https://github.com/sebastianbergmann/php-text-template/",
+            "keywords": [
+                "template"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/php-text-template/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "phpunit/php-timer",
+            "version": "1.0.5",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/php-timer/sebastianbergmann_php-timer_1.0.5.zip",
+                "reference": "sebastianbergmann_php-timer_1.0.5.zip",
+                "shasum": "cd2712d9fca8430cc7764dd73fe9e5a687ae1d03"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "PHP/"
+                ]
+            },
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Utility class for timing",
+            "homepage": "https://github.com/sebastianbergmann/php-timer/",
+            "keywords": [
+                "timer"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/php-timer/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "phpunit/php-token-stream",
+            "version": "1.2.2",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/php-token-stream/sebastianbergmann_php-token-stream_1.2.2.zip",
+                "reference": "sebastianbergmann_php-token-stream_1.2.2.zip",
+                "shasum": "84d095bcda38bca82fee9c4a7af363a3a9a201db"
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "PHP/"
+                ]
+            },
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Wrapper around PHP's tokenizer extension.",
+            "homepage": "https://github.com/sebastianbergmann/php-token-stream/",
+            "keywords": [
+                "tokenizer"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/php-token-stream/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "phpunit/phpunit",
+            "version": "4.1.3",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/phpunit/sebastianbergmann_phpunit_4.1.3.zip",
+                "reference": "sebastianbergmann_phpunit_4.1.3.zip",
+                "shasum": "cf3f2e800e39a4ff927fab29707d233b812b2bda"
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-reflection": "*",
+                "ext-spl": "*",
+                "php": ">=5.3.3",
+                "phpunit/php-code-coverage": "~2.0",
+                "phpunit/php-file-iterator": "~1.3.1",
+                "phpunit/php-text-template": "~1.2",
+                "phpunit/php-timer": "~1.0.2",
+                "phpunit/phpunit-mock-objects": "~2.1",
+                "sebastian/comparator": "~1.0",
+                "sebastian/diff": "~1.1",
+                "sebastian/environment": "~1.0",
+                "sebastian/exporter": "~1.0",
+                "sebastian/version": "~1.0",
+                "symfony/yaml": "~2.0"
+            },
+            "suggest": {
+                "phpunit/php-invoker": "~1.1"
+            },
+            "bin": [
+                "phpunit"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "include-path": [
+                "",
+                "../../symfony/yaml/"
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "The PHP Unit Testing framework.",
+            "homepage": "http://www.phpunit.de/",
+            "keywords": [
+                "phpunit",
+                "testing",
+                "xunit"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/phpunit/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "phpunit/phpunit-mock-objects",
+            "version": "2.1.5",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/phpunit-mock-objects/sebastianbergmann_phpunit-mock-objects_2.1.5.zip",
+                "reference": "sebastianbergmann_phpunit-mock-objects_2.1.5.zip",
+                "shasum": "8cf43691cd9e6405848cd3b28dcfa308718e2911"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "phpunit/php-text-template": "~1.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "suggest": {
+                "ext-soap": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "include-path": [
+                ""
+            ],
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sb@sebastian-bergmann.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Mock Object library for PHPUnit",
+            "homepage": "https://github.com/sebastianbergmann/phpunit-mock-objects/",
+            "keywords": [
+                "mock",
+                "xunit"
+            ],
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/phpunit-mock-objects/issues",
+                "irc": "irc://irc.freenode.net/phpunit"
+            }
+        },
+        {
+            "name": "sebastian/comparator",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/comparator/sebastianbergmann_comparator_1.0.0.zip",
+                "reference": "sebastianbergmann_comparator_1.0.0.zip",
+                "shasum": "e1e12d105d031bfb7547b1d9cc829e6b126e5d36"
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sebastian/diff": "~1.1",
+                "sebastian/exporter": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                }
+            ],
+            "description": "Provides the functionality to compare PHP values for equality",
+            "homepage": "http://www.github.com/sebastianbergmann/comparator",
+            "keywords": [
+                "comparator",
+                "compare",
+                "equality"
+            ]
+        },
+        {
+            "name": "sebastian/diff",
+            "version": "1.1.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/diff/sebastianbergmann_diff_1.1.0.zip",
+                "reference": "sebastianbergmann_diff_1.1.0.zip",
+                "shasum": "77147f9a4541edd8d6e3302f9f98fecfca6ef1bb"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Kore Nordmann",
+                    "email": "mail@kore-nordmann.de"
+                }
+            ],
+            "description": "Diff implementation",
+            "homepage": "http://www.github.com/sebastianbergmann/diff",
+            "keywords": [
+                "diff"
+            ]
+        },
+        {
+            "name": "sebastian/environment",
+            "version": "1.0.0",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/environment/sebastianbergmann_environment_1.0.0.zip",
+                "reference": "sebastianbergmann_environment_1.0.0.zip",
+                "shasum": "6c2aa477996fbc5d5bea17a22d492e496378d3bf"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                }
+            ],
+            "description": "Provides functionality to handle HHVM/PHP environments",
+            "homepage": "http://www.github.com/sebastianbergmann/environment",
+            "keywords": [
+                "environment",
+                "hhvm",
+                "xdebug"
+            ]
+        },
+        {
+            "name": "sebastian/exporter",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/exporter/sebastianbergmann_exporter_1.0.1.zip",
+                "reference": "sebastianbergmann_exporter_1.0.1.zip",
+                "shasum": "bac14b645713cbc48ded19fbb021b7718a9cdb6f"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.0.*@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de"
+                },
+                {
+                    "name": "Jeff Welch",
+                    "email": "whatthejeff@gmail.com"
+                },
+                {
+                    "name": "Volker Dusch",
+                    "email": "github@wallbash.com"
+                },
+                {
+                    "name": "Adam Harvey",
+                    "email": "aharvey@php.net"
+                },
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@2bepublished.at"
+                }
+            ],
+            "description": "Provides the functionality to export PHP variables for visualization",
+            "homepage": "http://www.github.com/sebastianbergmann/exporter",
+            "keywords": [
+                "export",
+                "exporter"
+            ]
+        },
+        {
+            "name": "sebastian/version",
+            "version": "1.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/sebastianbergmann/version/sebastianbergmann_version_1.0.3.zip",
+                "reference": "sebastianbergmann_version_1.0.3.zip",
+                "shasum": "e1298d979bee00e4b5e97b0a52a2bf6d74bcad41"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian Bergmann",
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
+                }
+            ],
+            "description": "Library that helps with managing the version number of Git-hosted PHP projects",
+            "homepage": "https://github.com/sebastianbergmann/version",
+            "support": {
+                "issues": "https://github.com/sebastianbergmann/version/issues"
+            }
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.5.1",
+            "target-dir": "Symfony/Component/Yaml",
+            "dist": {
+                "type": "zip",
+                "url": "http://satis.basereality.com/packages/symfony/yaml/symfony_yaml_v2.5.1.zip",
+                "reference": "symfony_yaml_v2.5.1.zip",
+                "shasum": "8253194e67b91282b2f8cc3517d59a857e4e2538"
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com"
+        }
+    ],
+    "aliases": [
+        {
+            "alias": "2.4.1",
+            "alias_normalized": "2.4.1.0",
+            "version": "9999999-dev",
+            "package": "danack/danack-code"
+        },
+        {
+            "alias": "0.7.0",
+            "alias_normalized": "0.7.0.0",
+            "version": "9999999-dev",
+            "package": "rdlowrey/artax"
+        }
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "danack/danack-code": 20,
+        "danack/artaxservicebuilder": 20,
+        "rdlowrey/artax": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
