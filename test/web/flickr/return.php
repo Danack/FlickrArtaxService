@@ -3,7 +3,11 @@
 require "flickrBootstrap.php";
 
 
-use ArtaxApiBuilder\Service\OauthConfig;
+use ArtaxServiceBuilder\Service\OauthConfig;
+use FlickrService\Model\OauthAccessToken;
+use FlickrService\FlickrAPI\FlickrAPI;
+use FlickrService\FlickrAPI\FlickrAPIException;
+
 
 
 
@@ -45,7 +49,7 @@ function checkAuthResult() {
     $oauthToken = getVariable('oauth_token', FALSE);
     $oauthVerifier = getVariable('oauth_verifier', FALSE);
 
-    /** @var \AABTest\OauthRequestToken $oauthRequest */
+    /** @var \FlickrService\Model\OauthRequestToken $oauthRequest */
     $oauthRequest = getSessionVariable('oauthRequest', null);
 
     if (!$oauthToken ||
@@ -69,16 +73,15 @@ function checkAuthResult() {
         $oauthService->setOauthToken($oauthRequest->oauthToken);
         $oauthService->setTokenSecret($oauthRequest->oauthTokenSecret);
         
-        $api = new \AABTest\FlickrAPI\FlickrAPI(FLICKR_KEY, $oauthService);
+        $api = new FlickrAPI(FLICKR_KEY, $oauthService);
         $command = $api->GetOauthAccessToken($oauthVerifier);
         $oauthAccessToken = $command->execute();
         setSessionVariable('oauthAccessToken', $oauthAccessToken);
         echo "Oauth is confirmed - username is:".$oauthAccessToken->user->username;
     }
-    catch(\AABTest\FlickrAPI\FlickrAPIException $fae) {
+    catch(FlickrAPIException $fae) {
         echo "Exception processing response: ".$fae->getResponse()->getBody();
     }
-
 }
 
 

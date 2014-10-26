@@ -6,8 +6,9 @@ use ArtaxServiceBuilder\APIGenerator;
 
 $autoloader = require_once(__DIR__ . '/../vendor/autoload.php');
 
-$outputDirectory = realpath(__DIR__).'/../var/src';
-$autoloader->add('AABTest', [$outputDirectory]);
+
+$outputDirectory = realpath(__DIR__).'/../lib';
+$autoloader->add('FlickrService', [$outputDirectory]);
 
 
 define('FLICKR_KEY', 12345);
@@ -45,17 +46,33 @@ if (true) {
         'GetOauthRequestToken',
         "flickr.people.getPublicPhotos",
         "flickr.people.getPhotos",
-        "flickr.test.login"
+        "flickr.test.login",
+        "UploadPhoto"
     ]);
     
     //$apiGenerator->includePattern('flickr\.people\.get.*');
 }
 
+$namespace = 'FlickrService';
+
+
+
 $apiGenerator->excludeMethods(['defaultGetOperation']);
-$apiGenerator->parseAndAddServiceFromFile(__DIR__.'/fixtures/flickrService.php');
-$apiGenerator->addInterface('AABTest\FlickrAPI');
-$apiGenerator->setFQCN('AABTest\FlickrAPI\FlickrAPI');
+$apiGenerator->parseAndAddServiceFromFile(__DIR__.'/serviceDescription.php');
+$apiGenerator->addInterface($namespace.'\FlickrAPI');
+$apiGenerator->setFQCN($namespace.'\FlickrAPI\FlickrAPI');
+$apiGenerator->setOperationNamespace($namespace.'\Operation');
+$apiGenerator->setRequiresOauth1(true);
+
 $apiGenerator->generate();
-$apiGenerator->generateInterface('AABTest\FlickrAPI');
+$apiGenerator->generateInterface($namespace.'\FlickrAPI');
 
 
+
+//$apiGenerator->excludeMethods(['defaultGetOperation', 'defaultGetOauthOperation']);
+//$apiGenerator->parseAndAddServiceFromFile(__DIR__.'/../description/githubServiceDescription.php');
+//$apiGenerator->addInterface($namespace.'\GithubService');
+//$apiGenerator->setFQCN($namespace.'\GithubArtaxService\GithubArtaxService');
+//$apiGenerator->setOperationNamespace($namespace.'\Operation');
+//$apiGenerator->generate();
+//$apiGenerator->generateInterface($namespace.'\GithubService');

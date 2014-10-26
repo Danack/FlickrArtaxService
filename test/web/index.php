@@ -1,21 +1,10 @@
-<?php
-
-
-
-echo <<< END
-
-
 <html>
+<head>
+    <meta http-equiv="refresh" content="0; url=http://localhost:8000/flickr/index.php" />
+</head>
 
 <body>
-    <h2>Service builder oauth testing</h2>
-    <p><a href='/flickr/index.php'>Flickr demo</a> </p>
-    <p><a href='/github/index.php'>Github demo</a> </p>
+   Github <a href='/flickr/index.php'>is here </a>.
 </body>
 
 </html>
-
-
-END;
-
- 
