@@ -1,5 +1,18 @@
 <?php
 
+$perPage =  array(
+	'location' => 'query',
+	'description' => 'Number of items to return per page.',
+	'optional' => true,
+);
+
+$page = array(
+	'location' => 'query',
+	'description' => 'todo - describe variable',
+	'optional' => true,
+);
+
+
 return array (
 
 	"name" => "FlickAPI",
@@ -538,11 +551,7 @@ iconsmall="http://farm1.static.flickr.com/187/cols/56_43fac2cf79_s.jpg">
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page'    => $perPage,
 				'show_more'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -573,11 +582,7 @@ iconsmall="http://farm1.static.flickr.com/187/cols/56_43fac2cf79_s.jpg">
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page'    => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -688,11 +693,7 @@ iconsmall="http://farm1.static.flickr.com/187/cols/56_43fac2cf79_s.jpg">
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page'    => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -736,11 +737,7 @@ iconsmall="http://farm1.static.flickr.com/187/cols/56_43fac2cf79_s.jpg">
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page'    => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -979,11 +976,7 @@ owner="35034348999@N01"
 					'location' => 'query',
 					'description' => 'todo - describe variable',
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1029,11 +1022,7 @@ owner="35034348999@N01"
 					'location' => 'query',
 					'description' => 'todo - describe variable',
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1072,11 +1061,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page'    => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1260,10 +1245,7 @@ owner="35034348999@N01"
 					'location' => 'query',
 					'description' => 'todo - describe variable',
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1368,11 +1350,7 @@ owner="35034348999@N01"
 					'location' => 'query',
 					'description' => 'todo - describe variable',
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1523,11 +1501,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1629,11 +1603,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'method'    => array(
 					'location' => 'query',
 					'description' => 'Which flickr call is being made.',
@@ -1680,11 +1650,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1745,11 +1711,7 @@ owner="35034348999@N01"
 					'location' => 'query',
 					'description' => 'todo - describe variable',
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1784,11 +1746,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1823,11 +1781,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1865,11 +1819,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1902,11 +1852,7 @@ owner="35034348999@N01"
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -1978,11 +1924,7 @@ owner="35034348999@N01"
 					'location' => 'query',
 					'description' => 'todo - describe variable',
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -2050,11 +1992,7 @@ More information about the pandas can be found on the <a href="http://code.flick
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -2251,16 +2189,8 @@ More information about the pandas can be found on the <a href="http://code.flick
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
-				'page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
+				'page' => $page,
 				'method'    => array(
 					'location' => 'query',
 					'description' => 'Which flickr call is being made.',
@@ -2305,11 +2235,7 @@ More information about the pandas can be found on the <a href="http://code.flick
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -2376,11 +2302,7 @@ More information about the pandas can be found on the <a href="http://code.flick
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -2554,11 +2476,7 @@ More information about the pandas can be found on the <a href="http://code.flick
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'include_faves'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -2594,11 +2512,7 @@ More information about the pandas can be found on the <a href="http://code.flick
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -2778,11 +2692,7 @@ Batch corrections are processed in a delayed queue so it may take a few minutes 
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -3229,11 +3139,7 @@ Before users may assign location data to a photo they must define who, by defaul
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'method'    => array(
 					'location' => 'query',
 					'description' => 'Which flickr call is being made.',
@@ -3332,11 +3238,7 @@ Before users may assign location data to a photo they must define who, by defaul
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',
@@ -3388,11 +3290,7 @@ Before users may assign location data to a photo they must define who, by defaul
 					'description' => 'todo - describe variable',
 					'optional' => true,
 				),
-				'per_page'    => array(
-					'location' => 'query',
-					'description' => 'todo - describe variable',
-					'optional' => true,
-				),
+				'per_page' => $perPage,
 				'page'    => array(
 					'location' => 'query',
 					'description' => 'todo - describe variable',

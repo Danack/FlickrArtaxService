@@ -59,33 +59,63 @@ class flickrTestLogin implements \ArtaxServiceBuilder\Operation {
 
     public function setParams(array $params) {
         if (array_key_exists('format', $params)) {
-             $this->parameters['format'] = $params['format'];
+            $this->parameters['format'] = $params['format'];
         }
         if (array_key_exists('apiKey', $params)) {
-             $this->parameters['api_key'] = $params['apiKey'];
+            $this->parameters['api_key'] = $params['apiKey'];
         }
         if (array_key_exists('nojsoncallback', $params)) {
-             $this->parameters['nojsoncallback'] = $params['nojsoncallback'];
+            $this->parameters['nojsoncallback'] = $params['nojsoncallback'];
         }
         if (array_key_exists('method', $params)) {
-             $this->parameters['method'] = $params['method'];
+            $this->parameters['method'] = $params['method'];
         }
     }
 
+    /**
+     * Set format
+     *
+     * @return $this
+     */
     public function setFormat($format) {
         $this->parameters['format'] = $format;
+
+        return $this;
     }
 
+    /**
+     * Set apiKey
+     *
+     * @return $this
+     */
     public function setApiKey($apiKey) {
         $this->parameters['api_key'] = $apiKey;
+
+        return $this;
     }
 
+    /**
+     * Set nojsoncallback
+     *
+     * @return $this
+     */
     public function setNojsoncallback($nojsoncallback) {
         $this->parameters['nojsoncallback'] = $nojsoncallback;
+
+        return $this;
     }
 
+    /**
+     * Set method
+     *
+     * Which flickr call is being made.
+     *
+     * @return $this
+     */
     public function setMethod($method) {
         $this->parameters['method'] = $method;
+
+        return $this;
     }
 
     public function getParameters() {
@@ -122,18 +152,18 @@ class flickrTestLogin implements \ArtaxServiceBuilder\Operation {
         $queryParameters = [];
 
         if (array_key_exists('format', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('format');
-           $queryParameters['format'] = $value;
+        $value = $this->getFilteredParameter('format');
+            $queryParameters['format'] = $value;
         }
-            $value = $this->getFilteredParameter('api_key');
+        $value = $this->getFilteredParameter('api_key');
         $queryParameters['api_key'] = $value;
         if (array_key_exists('nojsoncallback', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('nojsoncallback');
-           $queryParameters['nojsoncallback'] = $value;
+        $value = $this->getFilteredParameter('nojsoncallback');
+            $queryParameters['nojsoncallback'] = $value;
         }
         if (array_key_exists('method', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('method');
-           $queryParameters['method'] = $value;
+        $value = $this->getFilteredParameter('method');
+            $queryParameters['method'] = $value;
         }
 
         //Parameters are parsed and set, lets prepare the request

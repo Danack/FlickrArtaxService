@@ -53,12 +53,21 @@ class GetOauthAccessToken implements \ArtaxServiceBuilder\Operation {
 
     public function setParams(array $params) {
         if (array_key_exists('oauth_verifier', $params)) {
-             $this->parameters['oauth_verifier'] = $params['oauth_verifier'];
+            $this->parameters['oauth_verifier'] = $params['oauth_verifier'];
         }
     }
 
+    /**
+     * Set oauth_verifier
+     *
+     * The oauth_verifier that shows that the user was redirected back to your site.
+     *
+     * @return $this
+     */
     public function setOauth_verifier($oauth_verifier) {
         $this->parameters['oauth_verifier'] = $oauth_verifier;
+
+        return $this;
     }
 
     public function getParameters() {
@@ -94,7 +103,7 @@ class GetOauthAccessToken implements \ArtaxServiceBuilder\Operation {
 
         $queryParameters = [];
 
-            $value = $this->getFilteredParameter('oauth_verifier');
+        $value = $this->getFilteredParameter('oauth_verifier');
         $queryParameters['oauth_verifier'] = $value;
 
         //Parameters are parsed and set, lets prepare the request

@@ -64,68 +64,141 @@ class UploadPhoto implements \ArtaxServiceBuilder\Operation {
 
     public function setParams(array $params) {
         if (array_key_exists('format', $params)) {
-             $this->parameters['format'] = $params['format'];
+            $this->parameters['format'] = $params['format'];
         }
         if (array_key_exists('photo', $params)) {
-             $this->parameters['photo'] = $params['photo'];
+            $this->parameters['photo'] = $params['photo'];
         }
         if (array_key_exists('title', $params)) {
-             $this->parameters['title'] = $params['title'];
+            $this->parameters['title'] = $params['title'];
         }
         if (array_key_exists('description', $params)) {
-             $this->parameters['description'] = $params['description'];
+            $this->parameters['description'] = $params['description'];
         }
         if (array_key_exists('tags', $params)) {
-             $this->parameters['tags'] = $params['tags'];
+            $this->parameters['tags'] = $params['tags'];
         }
         if (array_key_exists('async', $params)) {
-             $this->parameters['async'] = $params['async'];
+            $this->parameters['async'] = $params['async'];
         }
         if (array_key_exists('is_public', $params)) {
-             $this->parameters['is_public'] = $params['is_public'];
+            $this->parameters['is_public'] = $params['is_public'];
         }
         if (array_key_exists('is_friend', $params)) {
-             $this->parameters['is_friend'] = $params['is_friend'];
+            $this->parameters['is_friend'] = $params['is_friend'];
         }
         if (array_key_exists('is_family', $params)) {
-             $this->parameters['is_family'] = $params['is_family'];
+            $this->parameters['is_family'] = $params['is_family'];
         }
     }
 
+    /**
+     * Set format
+     *
+     * @return $this
+     */
     public function setFormat($format) {
         $this->parameters['format'] = $format;
+
+        return $this;
     }
 
+    /**
+     * Set photo
+     *
+     * The file to upload
+     *
+     * @return $this
+     */
     public function setPhoto($photo) {
         $this->parameters['photo'] = $photo;
+
+        return $this;
     }
 
+    /**
+     * Set title
+     *
+     * The title of the photo.
+     *
+     * @return $this
+     */
     public function setTitle($title) {
         $this->parameters['title'] = $title;
+
+        return $this;
     }
 
+    /**
+     * Set description
+     *
+     * The description of the photo
+     *
+     * @return $this
+     */
     public function setDescription($description) {
         $this->parameters['description'] = $description;
+
+        return $this;
     }
 
+    /**
+     * Set tags
+     *
+     * A space-separated list of tags to apply to the photo.
+     *
+     * @return $this
+     */
     public function setTags($tags) {
         $this->parameters['tags'] = $tags;
+
+        return $this;
     }
 
+    /**
+     * Set async
+     *
+     * Whether to process the file asynchronously.
+     *
+     * @return $this
+     */
     public function setAsync($async) {
         $this->parameters['async'] = $async;
+
+        return $this;
     }
 
+    /**
+     * Set is_public
+     *
+     * @return $this
+     */
     public function setIs_public($is_public) {
         $this->parameters['is_public'] = $is_public;
+
+        return $this;
     }
 
+    /**
+     * Set is_friend
+     *
+     * @return $this
+     */
     public function setIs_friend($is_friend) {
         $this->parameters['is_friend'] = $is_friend;
+
+        return $this;
     }
 
+    /**
+     * Set is_family
+     *
+     * @return $this
+     */
     public function setIs_family($is_family) {
         $this->parameters['is_family'] = $is_family;
+
+        return $this;
     }
 
     public function getParameters() {
@@ -162,30 +235,30 @@ class UploadPhoto implements \ArtaxServiceBuilder\Operation {
 
         $formBody = new \Artax\FormBody;
         if (array_key_exists('format', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('format');
-           $formBody->addField('format', $value);
+        $value = $this->getFilteredParameter('format');
+            $formBody->addField('format', $value);
         }
-            $value = $this->getFilteredParameter('photo');
+        $value = $this->getFilteredParameter('photo');
         $formBody->addFileField('photo', $value);
-            $value = $this->getFilteredParameter('title');
+        $value = $this->getFilteredParameter('title');
         $formBody->addField('title', $value);
-            $value = $this->getFilteredParameter('description');
+        $value = $this->getFilteredParameter('description');
         $formBody->addField('description', $value);
-            $value = $this->getFilteredParameter('tags');
+        $value = $this->getFilteredParameter('tags');
         $formBody->addField('tags', $value);
-            $value = $this->getFilteredParameter('async');
+        $value = $this->getFilteredParameter('async');
         $formBody->addField('async', $value);
         if (array_key_exists('is_public', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('is_public');
-           $formBody->addField('is_public', $value);
+        $value = $this->getFilteredParameter('is_public');
+            $formBody->addField('is_public', $value);
         }
         if (array_key_exists('is_friend', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('is_friend');
-           $formBody->addField('is_friend', $value);
+        $value = $this->getFilteredParameter('is_friend');
+            $formBody->addField('is_friend', $value);
         }
         if (array_key_exists('is_family', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('is_family');
-           $formBody->addField('is_family', $value);
+        $value = $this->getFilteredParameter('is_family');
+            $formBody->addField('is_family', $value);
         }
 
         //Parameters are parsed and set, lets prepare the request

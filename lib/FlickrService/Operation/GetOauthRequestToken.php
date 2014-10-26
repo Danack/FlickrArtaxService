@@ -53,12 +53,21 @@ class GetOauthRequestToken implements \ArtaxServiceBuilder\Operation {
 
     public function setParams(array $params) {
         if (array_key_exists('oauth_callback', $params)) {
-             $this->parameters['oauth_callback'] = $params['oauth_callback'];
+            $this->parameters['oauth_callback'] = $params['oauth_callback'];
         }
     }
 
+    /**
+     * Set oauth_callback
+     *
+     * The URL that an authorisation request should return the user to.
+     *
+     * @return $this
+     */
     public function setOauth_callback($oauth_callback) {
         $this->parameters['oauth_callback'] = $oauth_callback;
+
+        return $this;
     }
 
     public function getParameters() {
@@ -94,7 +103,7 @@ class GetOauthRequestToken implements \ArtaxServiceBuilder\Operation {
 
         $queryParameters = [];
 
-            $value = $this->getFilteredParameter('oauth_callback');
+        $value = $this->getFilteredParameter('oauth_callback');
         $queryParameters['oauth_callback'] = $value;
 
         //Parameters are parsed and set, lets prepare the request

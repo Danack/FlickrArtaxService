@@ -60,110 +60,239 @@ class flickrPeopleGetPhotos implements \ArtaxServiceBuilder\Operation {
 
     public function setParams(array $params) {
         if (array_key_exists('format', $params)) {
-             $this->parameters['format'] = $params['format'];
+            $this->parameters['format'] = $params['format'];
         }
         if (array_key_exists('apiKey', $params)) {
-             $this->parameters['api_key'] = $params['apiKey'];
+            $this->parameters['api_key'] = $params['apiKey'];
         }
         if (array_key_exists('nojsoncallback', $params)) {
-             $this->parameters['nojsoncallback'] = $params['nojsoncallback'];
+            $this->parameters['nojsoncallback'] = $params['nojsoncallback'];
         }
         if (array_key_exists('userID', $params)) {
-             $this->parameters['user_id'] = $params['userID'];
+            $this->parameters['user_id'] = $params['userID'];
         }
         if (array_key_exists('safeSearch', $params)) {
-             $this->parameters['safe_search'] = $params['safeSearch'];
+            $this->parameters['safe_search'] = $params['safeSearch'];
         }
         if (array_key_exists('min_upload_date', $params)) {
-             $this->parameters['min_upload_date'] = $params['min_upload_date'];
+            $this->parameters['min_upload_date'] = $params['min_upload_date'];
         }
         if (array_key_exists('max_upload_date', $params)) {
-             $this->parameters['max_upload_date'] = $params['max_upload_date'];
+            $this->parameters['max_upload_date'] = $params['max_upload_date'];
         }
         if (array_key_exists('minTakenDate', $params)) {
-             $this->parameters['min_taken_date'] = $params['minTakenDate'];
+            $this->parameters['min_taken_date'] = $params['minTakenDate'];
         }
         if (array_key_exists('maxTakenDate', $params)) {
-             $this->parameters['max_taken_date'] = $params['maxTakenDate'];
+            $this->parameters['max_taken_date'] = $params['maxTakenDate'];
         }
         if (array_key_exists('contentType', $params)) {
-             $this->parameters['content_type'] = $params['contentType'];
+            $this->parameters['content_type'] = $params['contentType'];
         }
         if (array_key_exists('privacy_filter', $params)) {
-             $this->parameters['privacy_filter'] = $params['privacy_filter'];
+            $this->parameters['privacy_filter'] = $params['privacy_filter'];
         }
         if (array_key_exists('extras', $params)) {
-             $this->parameters['extras'] = $params['extras'];
+            $this->parameters['extras'] = $params['extras'];
         }
         if (array_key_exists('perPage', $params)) {
-             $this->parameters['per_page'] = $params['perPage'];
+            $this->parameters['per_page'] = $params['perPage'];
         }
         if (array_key_exists('page', $params)) {
-             $this->parameters['page'] = $params['page'];
+            $this->parameters['page'] = $params['page'];
         }
         if (array_key_exists('method', $params)) {
-             $this->parameters['method'] = $params['method'];
+            $this->parameters['method'] = $params['method'];
         }
     }
 
+    /**
+     * Set format
+     *
+     * @return $this
+     */
     public function setFormat($format) {
         $this->parameters['format'] = $format;
+
+        return $this;
     }
 
+    /**
+     * Set apiKey
+     *
+     * @return $this
+     */
     public function setApiKey($apiKey) {
         $this->parameters['api_key'] = $apiKey;
+
+        return $this;
     }
 
+    /**
+     * Set nojsoncallback
+     *
+     * @return $this
+     */
     public function setNojsoncallback($nojsoncallback) {
         $this->parameters['nojsoncallback'] = $nojsoncallback;
+
+        return $this;
     }
 
+    /**
+     * Set userID
+     *
+     * Which user to get the photos of
+     *
+     * @return $this
+     */
     public function setUserID($userID) {
         $this->parameters['user_id'] = $userID;
+
+        return $this;
     }
 
+    /**
+     * Set safeSearch
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setSafeSearch($safeSearch) {
         $this->parameters['safe_search'] = $safeSearch;
+
+        return $this;
     }
 
+    /**
+     * Set min_upload_date
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setMin_upload_date($min_upload_date) {
         $this->parameters['min_upload_date'] = $min_upload_date;
+
+        return $this;
     }
 
+    /**
+     * Set max_upload_date
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setMax_upload_date($max_upload_date) {
         $this->parameters['max_upload_date'] = $max_upload_date;
+
+        return $this;
     }
 
+    /**
+     * Set minTakenDate
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setMinTakenDate($minTakenDate) {
         $this->parameters['min_taken_date'] = $minTakenDate;
+
+        return $this;
     }
 
+    /**
+     * Set maxTakenDate
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setMaxTakenDate($maxTakenDate) {
         $this->parameters['max_taken_date'] = $maxTakenDate;
+
+        return $this;
     }
 
+    /**
+     * Set contentType
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setContentType($contentType) {
         $this->parameters['content_type'] = $contentType;
+
+        return $this;
     }
 
+    /**
+     * Set privacy_filter
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setPrivacy_filter($privacy_filter) {
         $this->parameters['privacy_filter'] = $privacy_filter;
+
+        return $this;
     }
 
+    /**
+     * Set extras
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setExtras($extras) {
         $this->parameters['extras'] = $extras;
+
+        return $this;
     }
 
+    /**
+     * Set perPage
+     *
+     * Number of items to return per page.
+     *
+     * @return $this
+     */
     public function setPerPage($perPage) {
         $this->parameters['per_page'] = $perPage;
+
+        return $this;
     }
 
+    /**
+     * Set page
+     *
+     * todo - describe variable
+     *
+     * @return $this
+     */
     public function setPage($page) {
         $this->parameters['page'] = $page;
+
+        return $this;
     }
 
+    /**
+     * Set method
+     *
+     * Which flickr call is being made.
+     *
+     * @return $this
+     */
     public function setMethod($method) {
         $this->parameters['method'] = $method;
+
+        return $this;
     }
 
     public function getParameters() {
@@ -200,60 +329,60 @@ class flickrPeopleGetPhotos implements \ArtaxServiceBuilder\Operation {
         $queryParameters = [];
 
         if (array_key_exists('format', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('format');
-           $queryParameters['format'] = $value;
+        $value = $this->getFilteredParameter('format');
+            $queryParameters['format'] = $value;
         }
-            $value = $this->getFilteredParameter('api_key');
+        $value = $this->getFilteredParameter('api_key');
         $queryParameters['api_key'] = $value;
         if (array_key_exists('nojsoncallback', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('nojsoncallback');
-           $queryParameters['nojsoncallback'] = $value;
+        $value = $this->getFilteredParameter('nojsoncallback');
+            $queryParameters['nojsoncallback'] = $value;
         }
-            $value = $this->getFilteredParameter('user_id');
+        $value = $this->getFilteredParameter('user_id');
         $queryParameters['user_id'] = $value;
         if (array_key_exists('safe_search', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('safe_search');
-           $queryParameters['safe_search'] = $value;
+        $value = $this->getFilteredParameter('safe_search');
+            $queryParameters['safe_search'] = $value;
         }
         if (array_key_exists('min_upload_date', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('min_upload_date');
-           $queryParameters['min_upload_date'] = $value;
+        $value = $this->getFilteredParameter('min_upload_date');
+            $queryParameters['min_upload_date'] = $value;
         }
         if (array_key_exists('max_upload_date', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('max_upload_date');
-           $queryParameters['max_upload_date'] = $value;
+        $value = $this->getFilteredParameter('max_upload_date');
+            $queryParameters['max_upload_date'] = $value;
         }
         if (array_key_exists('min_taken_date', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('min_taken_date');
-           $queryParameters['min_taken_date'] = $value;
+        $value = $this->getFilteredParameter('min_taken_date');
+            $queryParameters['min_taken_date'] = $value;
         }
         if (array_key_exists('max_taken_date', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('max_taken_date');
-           $queryParameters['max_taken_date'] = $value;
+        $value = $this->getFilteredParameter('max_taken_date');
+            $queryParameters['max_taken_date'] = $value;
         }
         if (array_key_exists('content_type', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('content_type');
-           $queryParameters['content_type'] = $value;
+        $value = $this->getFilteredParameter('content_type');
+            $queryParameters['content_type'] = $value;
         }
         if (array_key_exists('privacy_filter', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('privacy_filter');
-           $queryParameters['privacy_filter'] = $value;
+        $value = $this->getFilteredParameter('privacy_filter');
+            $queryParameters['privacy_filter'] = $value;
         }
         if (array_key_exists('extras', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('extras');
-           $queryParameters['extras'] = $value;
+        $value = $this->getFilteredParameter('extras');
+            $queryParameters['extras'] = $value;
         }
         if (array_key_exists('per_page', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('per_page');
-           $queryParameters['per_page'] = $value;
+        $value = $this->getFilteredParameter('per_page');
+            $queryParameters['per_page'] = $value;
         }
         if (array_key_exists('page', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('page');
-           $queryParameters['page'] = $value;
+        $value = $this->getFilteredParameter('page');
+            $queryParameters['page'] = $value;
         }
         if (array_key_exists('method', $this->parameters) == true) {
-            $value = $this->getFilteredParameter('method');
-           $queryParameters['method'] = $value;
+        $value = $this->getFilteredParameter('method');
+            $queryParameters['method'] = $value;
         }
 
         //Parameters are parsed and set, lets prepare the request

@@ -42,6 +42,13 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
         $this->oauthService = $oauthService;
     }
 
+    public function signRequest(\Amp\Artax\Request $request) {
+        if ($this->oauthService == null) {
+            throw new \ArtaxServiceBuilder\ArtaxServiceException("oauthService is null, so cannot call request that requires oauth.");
+        }
+        return $this->oauthService->signRequest($request);
+    }
+
     /**
      * GetOauthRequestToken
      *
@@ -151,13 +158,6 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
 
     public function setApiKey($value) {
         $this->api_key = $value;
-    }
-
-    public function signRequest(\Amp\Artax\Request $request) {
-        if ($this->oauthService == null) {
-            throw new \ArtaxServiceBuilder\ArtaxServiceException("oauthService is null, so cannot call request that requires oauth.");
-        }
-        return $this->oauthService->signRequest($request);
     }
 
     /**
