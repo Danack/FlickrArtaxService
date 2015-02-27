@@ -9,6 +9,10 @@ use FlickrService\FlickrAPI\FlickrAPI;
 use ArtaxServiceBuilder\ResponseCache\NullResponseCache;
 use FlickrService\FlickrAPI\FlickrAPIException;
 
+use Amp\NativeReactor;
+use Amp\Artax\Client as ArtaxClient;
+
+
 /**
  * @group service
  */
@@ -16,15 +20,30 @@ use FlickrService\FlickrAPI\FlickrAPIException;
 class FlickrOauthTest extends \PHPUnit_Framework_TestCase { 
   //  extends \ArtaxApiBuilder\TestBase {
 
-//    /**
-//     * @var \Auryn\Provider
-//     */
-//    private $provider;
+    /**
+     * @return array
+     */
+    private function  getReactorAndAPI() {
 
-//    function setup() {
-//        //$this->provider = createTestProvider();
-//        //parent::setup();
-//    }
+        $reactor = \Amp\getReactor();
+
+        $oauthConfig = new OauthConfig(
+            FLICKR_KEY,
+            FLICKR_SECRET
+        );
+
+        $oauthService = new FlickrOauth1($oauthConfig);
+
+        $client = new \Amp\Artax\Client();
+        $client->setOption(ArtaxClient::OP_MS_CONNECT_TIMEOUT, 5000);
+        $client->setOption(ArtaxClient::OP_MS_KEEP_ALIVE_TIMEOUT, 1000);
+
+        $responseCache = new NullResponseCache();
+        $api = new FlickrAPI($client, $reactor, $responseCache, FLICKR_KEY, $oauthService);
+
+        return [$reactor, $api, $oauthService];
+    }
+
 
 
     function testFlickOauthRequest() {
@@ -35,11 +54,8 @@ class FlickrOauthTest extends \PHPUnit_Framework_TestCase {
         );
 
         try {
-            $oauthService = new FlickrOauth1($oauthConfig);
-
-            $client = new \Amp\Artax\Client();
-            $responseCache = new NullResponseCache();
-            $api = new FlickrAPI($client, $responseCache, FLICKR_KEY, $oauthService);
+            list($reactor, $api) = $this->getReactorAndAPI();
+            /** @var $api \FlickrService\FlickrAPI\FlickrAPI $command  */
             
             //$api = new \AABTest\FlickrAPI\FlickrAPI(FLICKR_KEY, $oauthService);    
             $command = $api->GetOauthRequestToken("http://imagick.test/");
@@ -65,16 +81,10 @@ class FlickrOauthTest extends \PHPUnit_Framework_TestCase {
      */
     function tstFlickrPeopleGetPublicPhotos() {
 
-        $oauthConfig = new OauthConfig(
-            FLICKR_KEY,
-            FLICKR_SECRET
-        );
+        list($reactor, $api, $oauthService) = $this->getReactorAndAPI();
+        /** @var $api \FlickrService\FlickrAPI\FlickrAPI $command  */
+        /** @var $oauthService \ArtaxServiceBuilder\Service\FlickrOauth1 */
 
-        $oauthService = new FlickrOauth1($oauthConfig);
-
-        $client = new \Amp\Artax\Client();
-        $responseCache = new NullResponseCache();
-        $api = new FlickrAPI($client, $responseCache, FLICKR_KEY, $oauthService);
         $user_id = "46085186@N02";
         $per_page = 5;
         $page = 1;

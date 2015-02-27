@@ -93,8 +93,15 @@ interface FlickrAPI {
      * Execute an operation asynchronously.
      *
      * @param \ArtaxServiceBuilder\Operation $operation The operation to perform
-     * @param callable $callback The callback to call on completion/response.
-     * Parameters should be blah blah blah
+     * @param callable $callback The callback to call on completion/response. The
+     * signature of the method should be:
+     * function(
+     *     \Exception $error = null, // null if no error 
+     *     $parsedData = null, //The parsed operation data i.e. same type as
+     * responseClass of the operation.
+     *     \Amp\Artax\Response $response = null //The response received or null if the
+     * request completely failed.
+     * )
      * @return \Amp\Promise A promise to resolve the call at some time.
      */
     public function executeAsync(\Amp\Artax\Request $request, \ArtaxServiceBuilder\Operation $operation, callable $callback);

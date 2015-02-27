@@ -9,6 +9,8 @@ use FlickrService\FlickrAPI\FlickrAPI;
 use ArtaxServiceBuilder\ResponseCache\NullResponseCache;
 use ArtaxServiceBuilder\Service\OauthConfig;
 use ArtaxServiceBuilder\Service\FlickrOauth1;
+use Amp\NativeReactor;
+use Amp\Artax\Client as ArtaxClient;
 
 class FlickrAPITest extends \ArtaxServiceBuilder\TestBase {
 
@@ -18,33 +20,46 @@ class FlickrAPITest extends \ArtaxServiceBuilder\TestBase {
     private $provider;
 
     function setup() {
-
-        
-        
         parent::setup();
     }
 
     /**
-     *
+     * @return array
      */
-    function testFlickrPeopleGetPublicPhotos() {
-
+    private function  getReactorAndAPI() {
+        $reactor = \Amp\getReactor();
         $oauthConfig = new OauthConfig(
             FLICKR_KEY,
             FLICKR_SECRET
         );
 
         $oauthService = new FlickrOauth1($oauthConfig);
-        
+
         $client = new \Amp\Artax\Client();
+        $client->setOption(ArtaxClient::OP_MS_CONNECT_TIMEOUT, 5000);
+        $client->setOption(ArtaxClient::OP_MS_KEEP_ALIVE_TIMEOUT, 1000);
+        
         $responseCache = new NullResponseCache();
-        $api = new FlickrAPI($client, $responseCache, FLICKR_KEY, $oauthService);
+        $api = new FlickrAPI($client, $reactor, $responseCache, FLICKR_KEY, $oauthService);
+
+        return [$reactor, $api];
+    }
+    
+    
+    /**
+     *
+     */
+    function testFlickrPeopleGetPublicPhotos() {
+
+   
 
         $user_id = "46085186@N02";
         $per_page = 5;
         $page = 1;
 
         try {
+            list($reactor, $api) = $this->getReactorAndAPI();
+            /** @var $api \FlickrService\FlickrAPI\FlickrAPI $command  */
             $command = $api->flickrPeopleGetPublicPhotos($user_id);
             $command->setPage($page);
             $command->setPerPage($per_page);
@@ -72,15 +87,8 @@ class FlickrAPITest extends \ArtaxServiceBuilder\TestBase {
      */
     function testFlickrPeopleGetPhotos() {
 
-        $oauthConfig = new OauthConfig(
-            FLICKR_KEY,
-            FLICKR_SECRET
-        );
-        $oauthService = new FlickrOauth1($oauthConfig);
-        
-        $client = new \Amp\Artax\Client();
-        $responseCache = new NullResponseCache();
-        $api = new FlickrAPI($client, $responseCache, FLICKR_KEY, $oauthService);
+        list($reactor, $api) = $this->getReactorAndAPI();
+        /** @var $api \FlickrService\FlickrAPI\FlickrAPI $command  */
 
         $user_id = "46085186@N02";
         $per_page = 5;
@@ -117,9 +125,8 @@ class FlickrAPITest extends \ArtaxServiceBuilder\TestBase {
         $this->markTestSkipped("Form body in Artax is borken.");
         return;
 
-        $client = new \Amp\Artax\Client();
-        $responseCache = new NullResponseCache();
-        $api = new FlickrAPI($client, $responseCache, FLICKR_KEY);
+        list($reactor, $api) = $this->getReactorAndAPI();
+        /** @var $api \FlickrService\FlickrAPI\FlickrAPI $command  */
 
         $user_id = "46085186@N02";
 
@@ -132,8 +139,6 @@ class FlickrAPITest extends \ArtaxServiceBuilder\TestBase {
         );
 
         $command->setIs_public(false);
-        
-
         $fileUploadResponse = $command->execute();
     }
     

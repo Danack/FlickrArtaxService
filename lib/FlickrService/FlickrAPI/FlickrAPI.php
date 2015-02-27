@@ -8,8 +8,10 @@ namespace FlickrService\FlickrAPI;
 
 use Amp\Artax\Request;
 use Amp\Artax\Response;
+use Amp\Reactor;
 use FlickrService\Operation\GetOauthRequestToken;
 use ArtaxServiceBuilder\BadResponseException;
+use ArtaxServiceBuilder\ProcessResponseException;
 use FlickrService\Operation\GetOauthAccessToken;
 use FlickrService\Operation\UploadPhoto;
 use FlickrService\Operation\flickrPeopleGetPhotos;
@@ -35,8 +37,14 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
      */
     public $responseCache = null;
 
-    public function __construct(\Amp\Artax\Client $client, \ArtaxServiceBuilder\ResponseCache $responseCache, $api_key, \ArtaxServiceBuilder\Service\Oauth1 $oauthService = null) {
+    /**
+     * @var \Amp\Reactor $reactor
+     */
+    public $reactor = null;
+
+    public function __construct(\Amp\Artax\Client $client, \Amp\Reactor $reactor, \ArtaxServiceBuilder\ResponseCache $responseCache, $api_key, \ArtaxServiceBuilder\Service\Oauth1 $oauthService = null) {
         $this->client = $client;
+        $this->reactor = $reactor;
         $this->responseCache = $responseCache;
         $this->api_key = $api_key;
         $this->oauthService = $oauthService;
@@ -175,10 +183,11 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
         $cachingHeaders = $this->responseCache->getCachingHeaders($request);
         $request->setAllHeaders($cachingHeaders);
         $promise = $this->client->request($request);
-        $response = $promise->wait();
+        $response = \Amp\wait($promise, $this->reactor);
 
         if ($response) {
             $operation->setResponse($response);
+            $operation->setOriginalResponse($response);
         }
 
         if ($operation->shouldResponseBeCached($response)) {
@@ -188,7 +197,8 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
         if ($operation->shouldUseCachedResponse($response)) {
             $cachedResponse = $this->responseCache->getResponse($originalRequest);
             if ($cachedResponse) {
-                $response = $cachedResponse; 
+                $response = $cachedResponse;
+                $operation->setResponse($response);
             }
             //@TODO This code should only be reached if the cache entry was deleted
             //so throw an exception? Or just leave the 304 to error?
@@ -209,8 +219,15 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
      * Execute an operation asynchronously.
      *
      * @param \ArtaxServiceBuilder\Operation $operation The operation to perform
-     * @param callable $callback The callback to call on completion/response.
-     * Parameters should be blah blah blah
+     * @param callable $callback The callback to call on completion/response. The
+     * signature of the method should be:
+     * function(
+     *     \Exception $error = null, // null if no error 
+     *     $parsedData = null, //The parsed operation data i.e. same type as
+     * responseClass of the operation.
+     *     \Amp\Artax\Response $response = null //The response received or null if the
+     * request completely failed.
+     * )
      * @return \Amp\Promise A promise to resolve the call at some time.
      */
     public function executeAsync(\Amp\Artax\Request $request, \ArtaxServiceBuilder\Operation $operation, callable $callback) {
@@ -222,6 +239,7 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
 
             if ($response) {
                 $operation->setResponse($response);
+                $operation->setOriginalResponse($response);
             }
 
             if($error) {
@@ -236,7 +254,8 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
             if ($operation->shouldUseCachedResponse($response)) {
                 $cachedResponse = $this->responseCache->getResponse($originalRequest);
                 if ($cachedResponse) {
-                    $response = $cachedResponse; 
+                    $response = $cachedResponse;
+                    $operation->setResponse($response);
                 }
             }
 
@@ -252,7 +271,7 @@ class FlickrAPI implements \FlickrService\FlickrAPI {
                     $callback(null, $parsedResponse, $response);
                 }
                 catch(\Exception $e) {
-                    $exception = new \Exception("Exception parsing response: ".$e->getMessage(), 0, $e);
+                    $exception = new ProcessResponseException("Exception parsing response: ".$e->getMessage(), 0, $e);
                     $callback($exception, null, $response);
                 }
             }

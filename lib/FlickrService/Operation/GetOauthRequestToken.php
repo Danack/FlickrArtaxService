@@ -9,19 +9,24 @@ namespace FlickrService\Operation;
 class GetOauthRequestToken implements \ArtaxServiceBuilder\Operation {
 
     /**
-     * @var $api \FlickrService\FlickrAPI\FlickrAPI
+     * @var \FlickrService\FlickrAPI\FlickrAPI
      */
     public $api = null;
 
     /**
-     * @var $api array
+     * @var array
      */
     public $parameters = null;
 
     /**
-     * @var $api \Amp\Artax\Response
+     * @var \Amp\Artax\Response
      */
     public $response = null;
+
+    /**
+     * @var \Amp\Artax\Response
+     */
+    public $originalResponse = null;
 
     /**
      * Get the last response.
@@ -165,7 +170,7 @@ class GetOauthRequestToken implements \ArtaxServiceBuilder\Operation {
      * Execute the operation asynchronously, passing the parsed response to the
      * callback
      *
-     * @return \FlickrService\Model\OauthRequestToken
+     * @return \Amp\Promise
      */
     public function executeAsync(callable $callable) {
         $request = $this->createRequest();
@@ -252,6 +257,24 @@ class GetOauthRequestToken implements \ArtaxServiceBuilder\Operation {
      */
     public function shouldResponseBeCached(\Amp\Artax\Response $response) {
         return $this->api->shouldResponseBeCached($response);
+    }
+
+    /**
+     * Set the original response. This may be different from the cached response if one
+     * is used.
+     */
+    public function setOriginalResponse(\Amp\Artax\Response $response) {
+        $this->originalResponse = $response;
+    }
+
+    /**
+     * Get the original response. This may be different from the cached response if one
+     * is used.
+     *
+     * @return \Amp\Artax\Response
+     */
+    public function getOriginalResponse() {
+        return $this->originalResponse;
     }
 
 
