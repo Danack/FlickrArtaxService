@@ -18,8 +18,8 @@
     },
     "require":{
         "Danack/danack-code": ">=2.4.5",
-        "danack/artaxservicebuilder": "dev-master as 0.3.0",
-        "amphp/artax": "v1.0.0-rc2"
+        "danack/artaxservicebuilder": "^0.3.2",
+        "amphp/artax": "v1.0.0-rc6"
     },
     "autoload": {
         "psr-0": {
